@@ -30,29 +30,28 @@ class Tweet extends Component {
         <img
           src={author.avatarURL}
           alt={`${author.name}'s Avatar`}
+          className="avatar"
         />
-        <span>
-          <div className="author-details">
-            <h3>{author.name}</h3>
-            <p>{formattedTime()}</p><span>|</span>
-            <p>{formattedDate}</p>
-            {replyingTo
-              && <p>Replying to @{tweets[replyingTo].author}</p>
-            }
-          </div>
-          <div className="tweet-body">
-            <p>{text}</p>
-          </div>
-          <div>
-            <button className="reply-button">
-              <img src="" alt="Reply to Tweet" />
-                // TODO: Add Link from router
-            </button>
-            <button className="like-button" onClick={this.likeTweet}>
-              <img src="" alt="Like Tweet Icon" />
-            </button>
-          </div>
-        </span>
+        <div className="author-details">
+          <h3>{author.name}</h3>
+          <p>{formattedTime()}</p><span>|</span>
+          <p>{formattedDate}</p>
+          {replyingTo
+            && <p>Replying to @{tweets[replyingTo].author}</p>
+          }
+        </div>
+        <div className="tweet-body">
+          <p>{text}</p>
+        </div>
+        <div className="tweet-actions">
+          <button className="reply-button">
+            <img src="" alt="Reply to Tweet" />
+              // TODO: Add Link from router
+          </button>
+          <button className="like-button" onClick={this.likeTweet}>
+            <img src="" alt="Like Tweet Icon" />
+          </button>
+        </div>
       </li>
     )
   }
