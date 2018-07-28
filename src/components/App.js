@@ -5,8 +5,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        Start Code
-        <Timeline />
+        <div className="container">
+          <Timeline />
+        </div>
       </div>
     )
   }
