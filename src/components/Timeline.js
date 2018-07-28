@@ -8,13 +8,15 @@ class Timeline extends Component {
     const tweetIds = Object.keys(this.props.tweets)
 
     return (
-      <div className="timeline-container">
-        <h1>Timeline</h1>
-        <ul>
-          {tweetIds.map((id) => (
-            <Tweet id={id} key={id}/>
-          ))}
-        </ul>
+      <div>
+        <h2 className="center">Timeline</h2>
+        <div className="timeline-container">
+          <ul>
+            {tweetIds.map((id) => (
+              <Tweet id={id} key={id}/>
+            ))}
+          </ul>
+        </div>
       </div>
     )
   }

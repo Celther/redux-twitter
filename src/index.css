@@ -4,39 +4,45 @@ body {
   font-family: sans-serif; }
 
 .container {
-  width: 70vw;
+  max-width: 1000px;
   margin: 0 auto; }
 
 h3 {
-  margin-bottom: 0; }
+  margin: 0; }
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none; }
 
 .timeline-container {
   display: flex;
   justify-content: center; }
 
+.center {
+  text-align: center; }
+
 .tweet {
-  width: 700px;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 0.2fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
-  border: 1.5px solid #e3e3e3;
-  border-radius: 5px;
+  width: 100%;
+  max-width: 600px;
   padding: 10px;
-  margin-bottom: 20px; }
-  .tweet img {
-    grid-row-start: 1;
-    grid-row-end: -1; }
+  display: flex;
+  border: 1px solid #dad7d7;
+  border-radius: 5px; }
 
 .avatar {
   border-radius: 25px;
   height: 50px;
-  width: 50px; }
+  width: 50px;
+  margin: 10px; }
 
-.author-details p {
-  font-size: 14px;
-  color: grey;
-  display: inline; }
-
-.author-details span {
-  margin: 0 5px; }
+.tweet-details {
+  padding: 10px; }
+  .tweet-details > div > div {
+    font-size: 14px;
+    color: grey; }
+  .tweet-details p {
+    font-size: 18px;
+    margin: 10px 0; }
+  .tweet-details span {
+    margin: 0 5px; }
