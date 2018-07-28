@@ -15,7 +15,7 @@ export default function tweets(state = {}, action) {
       }
     }
     case TOGGLE_LIKE: {
-      const { id, likes, authedUser } = action
+      const { id, authedUser } = action
       const tweet = state[id]
       return {
         ...state,
