@@ -3,6 +3,19 @@ import { connect } from 'react-redux'
 
 class Tweet extends Component {
   componentDidMount() {
+
+  }
+
+  formatTimestamp = (timestamp) => {
+    const tweetDate = new Date(timestamp)
+    const formattedDate = `${tweetDate.getDate()}/${tweetDate.getMonth()}/${tweetDate.getFullYear()}`
+    const minutes = ('0' + tweetDate.getMinutes()).slice(-2)
+    const hours = tweetDate.getHours()
+    const formattedTime = hours > 12
+      ? `${hours % 12}:${minutes}PM`
+      : `${hours}:${minutes}AM`
+
+    return `${formattedTime} | ${formattedDate}`
   }
 
   likeTweet = () => {
@@ -13,18 +26,6 @@ class Tweet extends Component {
     const { tweets, users, authedUser } = this.props
     const { text, replyingTo, timestamp, likes } = tweets[this.props.id]
     const author = users[tweets[this.props.id].author]
-
-    const tweetDate = new Date(timestamp)
-    const formattedDateTime = () => {
-      const formattedDate = `${tweetDate.getDate()}/${tweetDate.getMonth()}/${tweetDate.getFullYear()}`
-      const minutes = ('0' + tweetDate.getMinutes()).slice(-2)
-      const hours = tweetDate.getHours()
-      const formattedTime = hours > 12
-        ? `${hours % 12}:${minutes}PM`
-        : `${hours}:${minutes}AM`
-
-      return `${formattedTime} | ${formattedDate}`
-    }
 
     return (
       <li>
@@ -37,13 +38,13 @@ class Tweet extends Component {
           <div className="tweet-details">
             <div>
               <h3>{author.name}</h3>
-              <div>{formattedDateTime()}</div>
+              <div>{this.formatTimestamp(timestamp)}</div>
               {replyingTo
                 && <button>Replying to @{tweets[replyingTo].author}</button>
               }
               <p>{text}</p>
             </div>
-          
+
             <div className="tweet-icons">
               <button className="reply-button">
                 <img src="" alt="Reply to Tweet" />
