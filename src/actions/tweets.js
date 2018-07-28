@@ -5,8 +5,10 @@ export const ADD_TWEET = 'ADD_TWEET'
 export const TOGGLE_LIKE = 'TOGGLE_LIKE'
 
 export function receiveTweets(tweets) {
-  type: RECEIVE_TWEETS,
-  tweets,
+  return {
+    type: RECEIVE_TWEETS,
+    tweets,
+  }
 }
 
 function addTweet(tweet) {
