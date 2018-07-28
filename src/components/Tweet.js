@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Tweet extends Component {
+  componentDidMount() {
+  }
+
   likeTweet = () => {
     console.log('I loike it');
   }
@@ -14,7 +17,7 @@ class Tweet extends Component {
     const tweetDate = new Date(timestamp)
     const formattedDate = `${tweetDate.getDate()}/${tweetDate.getMonth()}/${tweetDate.getFullYear()}`
     const formattedTime = () => {
-      const minutes = (0 + tweetDate.getMinutes()).slice(-2)
+      const minutes = ('0' + tweetDate.getMinutes()).slice(-2)
       const hours = tweetDate.getHours()
 
       return hours > 12
@@ -23,9 +26,9 @@ class Tweet extends Component {
     }
 
     return (
-      <li className="tweet" key={this.props.id}>
+      <li className="tweet">
         <img
-          ref={author.avatarURL}
+          src={author.avatarURL}
           alt={`${author.name}'s Avatar`}
         />
         <span>
@@ -33,19 +36,20 @@ class Tweet extends Component {
             <h3>{author.name}</h3>
             <p>{formattedTime()}</p><span>|</span>
             <p>{formattedDate}</p>
-            {replyingTo && <p>{replyingTo}</p>}
+            {replyingTo
+              && <p>Replying to @{tweets[replyingTo].author}</p>
+            }
           </div>
           <div className="tweet-body">
             <p>{text}</p>
           </div>
           <div>
             <button className="reply-button">
-              <img href="" alt="Reply to Tweet" />
+              <img src="" alt="Reply to Tweet" />
                 // TODO: Add Link from router
             </button>
             <button className="like-button" onClick={this.likeTweet}>
-              <img href="" alt="Like Tweet Icon" />
-              // TODO: Add Link from router
+              <img src="" alt="Like Tweet Icon" />
             </button>
           </div>
         </span>
