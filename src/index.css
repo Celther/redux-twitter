@@ -46,3 +46,12 @@ li {
     margin: 10px 0; }
   .tweet-details span {
     margin: 0 5px; }
+
+.tweet-icons img {
+  height: 20px;
+  width: 20px;
+  padding: 0 5px; }
+
+.like-button {
+  border: none;
+  background: transparent; }

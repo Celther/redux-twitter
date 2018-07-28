@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import replyArrow from '../media/reply.svg'
+import heart from '../media/heart.svg'
+
 class Tweet extends Component {
   componentDidMount() {
 
@@ -46,13 +49,12 @@ class Tweet extends Component {
             </div>
 
             <div className="tweet-icons">
-              <button className="reply-button">
-                <img src="" alt="Reply to Tweet" />
-                // TODO: Add Link from router
-              </button>
+              <img src={replyArrow} alt="Reply to Tweet" />
+              {/* // TODO: Add Link from router */}
               <button className="like-button" onClick={this.likeTweet}>
-                <img src="" alt="Like Tweet Icon" />
+                <img src={heart} alt="Like Tweet Icon" />
               </button>
+              <span>{likes.length > 0 ? likes.length : null}</span>
             </div>
           </div>
         </div>
