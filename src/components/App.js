@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import Timeline from './Timeline'
+import ComposeTweet from './ComposeTweet'
 import handleInitialData from '../actions/shared'
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div>
         <div className="container">
+          <ComposeTweet />
           <Timeline />
         </div>
       </div>
