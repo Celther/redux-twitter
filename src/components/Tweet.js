@@ -25,7 +25,6 @@ class Tweet extends Component {
   }
 
   likeTweet = (info) => {
-    console.log('I like it', info);
     this.props.dispatch(handleToggleLike(info))
   }
 
