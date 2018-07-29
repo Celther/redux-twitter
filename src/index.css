@@ -10,6 +10,9 @@ body {
 h3 {
   margin: 0; }
 
+ul {
+  padding-left: 0; }
+
 li {
   list-style-type: none;
   padding: 10px;
@@ -23,20 +26,21 @@ li {
   text-align: center; }
 
 .tweet {
+  display: flex;
   width: 100%;
   max-width: 600px;
   padding: 10px;
-  display: flex;
   border: 1px solid #dad7d7;
   border-radius: 5px; }
 
 .avatar {
   border-radius: 25px;
   height: 50px;
-  width: 50px;
   margin: 10px; }
 
 .tweet-details {
+  display: flex;
+  flex-direction: column;
   padding: 10px; }
   .tweet-details > div > div {
     font-size: 14px;
