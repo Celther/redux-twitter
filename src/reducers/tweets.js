@@ -15,16 +15,21 @@ export default function tweets(state = {}, action) {
       }
     }
     case TOGGLE_LIKE: {
-      const { id, authedUser } = action
-      const tweet = state[id]
-      return {
-        ...state,
-        [id]: {
-          ...tweet,
-          likes: tweet.likes.contains(authedUser)
-            ? tweet.filter((user) => user !== authedUser)
-            : tweet.concat([authedUser])
+      try {
+        const { id, authedUser } = action
+        const tweet = state[id]
+
+        return {
+          ...state,
+          [id]: {
+            ...tweet,
+            likes: tweet.likes.includes(authedUser)
+              ? tweet.likes.filter((user) => user !== authedUser)
+              : tweet.likes.concat([authedUser])
+          }
         }
+      } catch (e) {
+        return console.error('There was an Error:', e);
       }
     }
     default:
