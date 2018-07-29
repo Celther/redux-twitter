@@ -21,9 +21,7 @@ function addTweet(tweet) {
 export function handleAddTweet(tweet) {
   return (dispatch) => {
     saveTweet(tweet)
-      .then((res) => {
-        dispatch(addTweet(res))
-      })
+      .then((res) => dispatch(addTweet(res)))
       .catch((err) => `There was an Error: ${err}`)
   }
 }
