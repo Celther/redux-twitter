@@ -66,14 +66,23 @@ textarea {
   display: flex;
   flex-direction: column;
   padding: 10px; }
-  .tweet-details > div > div {
-    font-size: 14px;
-    color: grey; }
-  .tweet-details p {
-    font-size: 18px;
-    margin: 10px 0; }
-  .tweet-details h3 {
-    margin: 0; }
+
+.tweet-header div, .tweet-header button {
+  font-size: 14px;
+  color: grey; }
+
+.tweet-header button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer; }
+
+.tweet-header p {
+  font-size: 18px;
+  margin: 10px 0; }
+
+.tweet-header h3 {
+  margin: 0; }
 
 .tweet-icons {
   display: flex;

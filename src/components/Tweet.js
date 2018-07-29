@@ -44,11 +44,14 @@ class Tweet extends Component {
             className="avatar"
           />
           <div className="tweet-details">
-            <div>
+            <div className="tweet-header">
               <h3>{author.name}</h3>
               <div>{this.formatTimestamp(timestamp)}</div>
               {replyingTo
-                && <button>Replying to @{tweets[replyingTo].author}</button>
+                && <button>
+                     Replying to @{tweets[replyingTo].author}
+                     // TODO: Link to replyingTo Tweet with Router
+                   </button>
               }
               <p>{text}</p>
             </div>

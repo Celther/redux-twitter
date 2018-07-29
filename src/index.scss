@@ -78,9 +78,18 @@ textarea {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  > div > div {
+}
+
+.tweet-header {
+  div, button {
     font-size: 14px;
     color: grey;
+  }
+  button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
   }
   p {
     font-size: 18px;
