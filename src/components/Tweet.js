@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import classNames from 'classnames'
+import { handleToggleLike } from '../actions/tweets'
+
 import replyArrow from '../media/reply.svg'
 import heart from '../media/heart.svg'
 
@@ -21,14 +24,17 @@ class Tweet extends Component {
     return `${formattedTime} | ${formattedDate}`
   }
 
-  likeTweet = () => {
-    console.log('I loike it');
+  likeTweet = (info) => {
+    console.log('I like it', info);
+    this.props.dispatch(handleToggleLike(info))
   }
 
   render() {
     const { tweets, users, authedUser } = this.props
     const { text, replyingTo, timestamp, likes } = tweets[this.props.id]
     const author = users[tweets[this.props.id].author]
+    const hasLiked = likes.includes(authedUser)
+    let likeButtonClass = classNames('like-button', { 'liked': hasLiked })
 
     return (
       <li>
@@ -51,7 +57,10 @@ class Tweet extends Component {
             <div className="tweet-icons">
               <img src={replyArrow} alt="Reply to Tweet" />
               {/* // TODO: Add Link from router */}
-              <button className="like-button" onClick={this.likeTweet}>
+              <button
+                className={likeButtonClass}
+                onClick={() => this.likeTweet({ id: this.props.id, authedUser, hasLiked })}
+              >
                 <img src={heart} alt="Like Tweet Icon" />
               </button>
               <span>{likes.length > 0 ? likes.length : null}</span>

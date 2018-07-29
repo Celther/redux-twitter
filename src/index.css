@@ -55,9 +55,13 @@ li {
   .tweet-icons img {
     height: 20px;
     width: 20px;
-    padding: 0 5px; }
+    padding: 0 5px;
+    cursor: pointer; }
 
 .like-button {
   border: none;
   background: transparent;
   padding-right: 0; }
+
+.liked {
+  background-color: red; }
