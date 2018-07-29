@@ -50,7 +50,7 @@ class Tweet extends Component {
               {replyingTo
                 && <button>
                      Replying to @{tweets[replyingTo].author}
-                     // TODO: Link to replyingTo Tweet with Router
+                     {/* // TODO: Link to replyingTo Tweet with Router */}
                    </button>
               }
               <p>{text}</p>
