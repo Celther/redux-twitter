@@ -35,8 +35,8 @@ class ComposeTweet extends Component {
 
   render() {
     return (
-      <div>
-        <h3 className="center">Compose new Tweet</h3>
+      <div className="container">
+        <h3>Compose new Tweet</h3>
         <form>
           <textarea
             placeholder="What are you thinking?"
