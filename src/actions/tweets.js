@@ -28,11 +28,10 @@ export function handleAddTweet(tweet) {
   }
 }
 
-function toggleLike({ id, likes, authedUser }) {
+function toggleLike({ id, authedUser }) {
   return {
     type: TOGGLE_LIKE,
     id,
-    likes,
     authedUser,
   }
 }
@@ -40,7 +39,7 @@ function toggleLike({ id, likes, authedUser }) {
 export function handleToggleLike(info) {
   return (dispatch) => {
     saveLikeToggle(info)
-      .then(() => toggleLike(info))
+      .then(() => dispatch(toggleLike(info)))
       .catch((err) => `There was an Error: ${err}`)
   }
 }
