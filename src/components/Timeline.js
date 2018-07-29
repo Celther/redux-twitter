@@ -5,7 +5,7 @@ import Tweet from './Tweet'
 
 class Timeline extends Component {
   render() {
-    const tweetIds = Object.keys(this.props.tweets)
+    const { tweetIds } = this.props
 
     return (
       <div className="container">
@@ -22,8 +22,11 @@ class Timeline extends Component {
 
 function mapStateToProps(state) {
   const { tweets } = state
+  const tweetIds = Object.keys(tweets)
+    .sort((a, b) => tweets[b].timestamp - tweets[a].timestamp)
+
   return {
-    tweets,
+    tweetIds,
   }
 }
 
