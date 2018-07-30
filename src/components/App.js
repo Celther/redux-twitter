@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Timeline from './Timeline'
@@ -13,20 +14,27 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <Router>
         <div className="app-container">
-          {this.props.authedUser
-            ? <div>
-              <ViewTweet match={{params:{ id: 'hbsc73kzqi75rg7v1e0i6a' }}}/>
-              <ComposeTweet />
-              <Timeline />
-            </div>
-            : null
+          {
+            this.props.loading ? null : (
+              <div>
+                <Route exact path="/" component={Timeline} />
+                <Route path="/new" component={ComposeTweet} />
+                <Route path="/view/:id" component={ViewTweet} />
+              </div>
+            )
           }
         </div>
-      </div>
+      </Router>
     )
   }
 }
 
-export default connect((state) => ({ authedUser: state.authedUser }))(App)
+function mapStateToProps(state) {
+  return {
+    loading: state.authedUser === null
+  }
+}
+
+export default connect(mapStateToProps)(App)
