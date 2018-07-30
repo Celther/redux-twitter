@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import Timeline from './Timeline'
 import ComposeTweet from './ComposeTweet'
+import ViewTweet from './ViewTweet'
 import handleInitialData from '../actions/shared'
 
 class App extends Component {
@@ -14,12 +15,18 @@ class App extends Component {
     return (
       <div>
         <div className="app-container">
-          <ComposeTweet />
-          <Timeline />
+          {this.props.authedUser
+            ? <div>
+              <ViewTweet match={{params:{ id: 'hbsc73kzqi75rg7v1e0i6a' }}}/>
+              <ComposeTweet />
+              <Timeline />
+            </div>
+            : null
+          }
         </div>
       </div>
     )
   }
 }
 
-export default connect()(App)
+export default connect((state) => ({ authedUser: state.authedUser }))(App)
