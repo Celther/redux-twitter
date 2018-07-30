@@ -26,7 +26,7 @@ class Tweet extends Component {
 
   render() {
     const { tweets, users, authedUser } = this.props
-    const { text, replyingTo, timestamp, likes } = tweets[this.props.id]
+    const { text, replyingTo, timestamp, likes, replies } = tweets[this.props.id]
     const author = users[tweets[this.props.id].author]
     const hasLiked = likes.includes(authedUser)
     let likeButtonClass = classNames('like-button', { 'liked': hasLiked })
@@ -45,16 +45,17 @@ class Tweet extends Component {
               <div>{this.formatTimestamp(timestamp)}</div>
               {replyingTo
                 && <button>
-                     Replying to @{tweets[replyingTo].author}
-                     {/* // TODO: Link to replyingTo Tweet with Router */}
-                   </button>
+                  Replying to @{tweets[replyingTo].author}
+                  {/* // TODO: Link to replyingTo Tweet with Router */}
+                </button>
               }
               <p>{text}</p>
             </div>
-
+            
             <div className="tweet-icons">
               <img src={replyArrow} alt="Reply to Tweet" />
               {/* // TODO: Add Link from router */}
+              <span>{replies.length > 0 ? replies.length : null}</span>
               <button
                 className={likeButtonClass}
                 onClick={() => this.likeTweet({ id: this.props.id, authedUser, hasLiked })}
