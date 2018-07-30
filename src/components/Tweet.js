@@ -8,10 +8,6 @@ import replyArrow from '../media/reply.svg'
 import heart from '../media/heart.svg'
 
 class Tweet extends Component {
-  componentDidMount() {
-
-  }
-
   formatTimestamp = (timestamp) => {
     const tweetDate = new Date(timestamp)
     const formattedDate = `${tweetDate.getDate()}/${tweetDate.getMonth()}/${tweetDate.getFullYear()}`
