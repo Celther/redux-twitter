@@ -1,3 +1,5 @@
+import { showLoading, hideLoading } from 'react-redux-loading-bar'
+
 import { saveTweet, saveLikeToggle } from '../utils/api'
 
 export const RECEIVE_TWEETS = 'RECEIVE_TWEETS'
@@ -20,8 +22,10 @@ function addTweet(tweet) {
 
 export function handleAddTweet(tweet) {
   return (dispatch) => {
+    dispatch(showLoading())
     saveTweet(tweet)
       .then((res) => dispatch(addTweet(res)))
+      .then(() => dispatch(hideLoading()))
       .catch((err) => `There was an Error: ${err}`)
   }
 }
