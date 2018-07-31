@@ -21,7 +21,6 @@ li {
   display: flex;
   justify-content: center;
   list-style-type: none;
-  padding: 10px;
   text-decoration: none;
 }
 
@@ -64,7 +63,9 @@ textarea {
   display: flex;
   width: 100%;
   max-width: 600px;
+  min-width: 400px;
   padding: 10px;
+  margin: 10px;
   border: 1px solid #dad7d7;
   border-radius: 5px;
 }
@@ -126,6 +127,7 @@ textarea {
   display: flex;
   justify-content: center;
   background-color: #232B2B;
+  margin-bottom: 30px;
   ul {
     display: flex;
     justify-content: space-around;
