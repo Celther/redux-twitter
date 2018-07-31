@@ -40,8 +40,11 @@ function toggleLike({ id, authedUser }) {
 
 export function handleToggleLike(info) {
   return (dispatch) => {
+    dispatch(toggleLike(info))
     saveLikeToggle(info)
-      .then(() => dispatch(toggleLike(info)))
-      .catch((err) => `There was an Error: ${err}`)
+      .catch((err) => {
+        dispatch(toggleLike(info))
+        return `There was an Error: ${err}`
+      })
   }
 }
