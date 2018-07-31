@@ -9,7 +9,6 @@ class Timeline extends Component {
 
     return (
       <div className="container">
-        <h2>Timeline</h2>
         <ul>
           {tweetIds.map((id) => (
             <li key={id}>
