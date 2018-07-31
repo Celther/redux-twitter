@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 import classNames from 'classnames'
 import { handleToggleLike } from '../actions/tweets'
@@ -32,41 +33,43 @@ class Tweet extends Component {
     let likeButtonClass = classNames('like-button', { 'liked': hasLiked })
 
     return (
-      <li>
-        <div className="tweet">
-          <img
-            src={author.avatarURL}
-            alt={`${author.name}'s Avatar`}
-            className="avatar"
-          />
-          <div className="tweet-details">
-            <div className="tweet-header">
-              <h3>{author.name}</h3>
-              <div>{this.formatTimestamp(timestamp)}</div>
-              {replyingTo
-                && <button>
-                  Replying to @{tweets[replyingTo].author}
-                  {/* // TODO: Link to replyingTo Tweet with Router */}
-                </button>
-              }
-              <p>{text}</p>
-            </div>
-            
-            <div className="tweet-icons">
+      <div className="tweet">
+        <img
+          src={author.avatarURL}
+          alt={`${author.name}'s Avatar`}
+          className="avatar"
+        />
+        <div className="tweet-details">
+          <div className="tweet-header">
+            <h3>{author.name}</h3>
+            <div>{this.formatTimestamp(timestamp)}</div>
+            {replyingTo &&
+              (
+                <NavLink to={`/view/${replyingTo}`}>
+                  <button>
+                    Replying to @{tweets[replyingTo].author}
+                  </button>
+                </NavLink>
+              )
+            }
+            <p>{text}</p>
+          </div>
+
+          <div className="tweet-icons">
+            <NavLink to={`/view/${this.props.id}`}>
               <img src={replyArrow} alt="Reply to Tweet" />
-              {/* // TODO: Add Link from router */}
-              <span>{replies.length > 0 ? replies.length : null}</span>
-              <button
-                className={likeButtonClass}
-                onClick={() => this.likeTweet({ id: this.props.id, authedUser, hasLiked })}
-              >
-                <img src={heart} alt="Like Tweet Icon" />
-              </button>
-              <span>{likes.length > 0 ? likes.length : null}</span>
-            </div>
+            </NavLink>
+            <span>{replies.length > 0 ? replies.length : null}</span>
+            <button
+              className={likeButtonClass}
+              onClick={() => this.likeTweet({ id: this.props.id, authedUser, hasLiked })}
+            >
+              <img src={heart} alt="Like Tweet Icon" />
+            </button>
+            <span>{likes.length > 0 ? likes.length : null}</span>
           </div>
         </div>
-      </li>
+      </div>
     )
   }
 }
