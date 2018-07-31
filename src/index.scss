@@ -1,3 +1,5 @@
+$icon-padding: 5px;
+
 body {
   margin: 0;
   padding: 0;
@@ -57,6 +59,7 @@ textarea {
   &:hover {
     border-color: #808080;
     border-radius: 16px;
+    background-color: white;
   }
 }
 
@@ -110,19 +113,36 @@ textarea {
   img {
     height: 20px;
     width: 20px;
-    padding: 0 5px;
+    padding: 0 $icon-padding;
     cursor: pointer;
   }
 }
 
 .like-button {
+  position: relative;
   border: none;
   background: transparent;
   padding-right: 0;
+  &:focus {
+    outline: none;
+  }
+  img {
+    position: absolute;
+    left: $icon-padding;
+  }
+  span {
+    display: flex;
+    width: 30px;
+    height: 20px;
+  }
 }
 
-.liked {
-  background-color: red;
+.liked-heart {
+  transform: scale(0);
+  transition: all 0.3s ease;
+  &.liked {
+    transform: scale(1);
+  }
 }
 
 .nav {

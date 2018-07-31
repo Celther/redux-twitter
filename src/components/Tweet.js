@@ -6,7 +6,8 @@ import classNames from 'classnames'
 import { handleToggleLike } from '../actions/tweets'
 
 import replyArrow from '../media/reply.svg'
-import heart from '../media/heart.svg'
+import heart from '../media/bw-heart.png'
+import redHeart from '../media/red-heart.png'
 
 class Tweet extends Component {
   formatTimestamp = (timestamp) => {
@@ -30,7 +31,6 @@ class Tweet extends Component {
     const { text, replyingTo, timestamp, likes, replies } = tweets[this.props.id]
     const author = users[tweets[this.props.id].author]
     const hasLiked = likes.includes(authedUser)
-    let likeButtonClass = classNames('like-button', { 'liked': hasLiked })
 
     return (
       <div className="tweet">
@@ -61,10 +61,16 @@ class Tweet extends Component {
             </NavLink>
             <span>{replies.length > 0 ? replies.length : null}</span>
             <button
-              className={likeButtonClass}
+              className="like-button"
               onClick={() => this.likeTweet({ id: this.props.id, authedUser, hasLiked })}
             >
               <img src={heart} alt="Like Tweet Icon" />
+              <img
+                src={redHeart}
+                alt="Liked Tweet Icon"
+                className={classNames('liked-heart', { 'liked': hasLiked })}
+              />
+              <span />
             </button>
             <span>{likes.length > 0 ? likes.length : null}</span>
           </div>
