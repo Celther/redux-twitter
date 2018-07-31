@@ -15,11 +15,29 @@ let users = {
     id: "dan_abramov",
     name: "Dan Abramov",
     avatarURL: "https://tylermcginnis.com/would-you-rather/dan.jpg",
-    tweets: ['5w6k1n34dkp1x29cuzn2zn', 'czpa59mg577x1oo45cup0d', 'omdbjl68fxact38hk7ypy6', '3km0v4hf1ps92ajf4z2ytg', 'njv20mq7jsxa6bgsqc97', 'sfljgka8pfddbcer8nuxv', 'r0xu2v1qrxa6ygtvf2rkjw'],
+    tweets: ['5w6k1n34dkp1x29cuzn2zn', 'czpa59mg577x1oo45cup0d', 'omdbjl68fxact38hk7ypy6', '3km0v4hf1ps92ajf4z2ytg', 'njv20mq7jsxa6bgsqc97', 'sfljgka8pfddbcer8nuxv', 'r0xu2v1qrxa6ygtvf2rkjw', 'tdmrhhh95mh601syanq4h'],
   }
 }
 
 let tweets = {
+  "tdmrhhh95mh601syanq4h": {
+    "author": "dan_abramov",
+    "id": "tdmrhhh95mh601syanq4h",
+    "likes": [],
+    "replies": [],
+    "text": "What?",
+    "timestamp": 1533007229718,
+    "replyingTo": "7ydl3pk7yqeb3n8s6z8r25"
+  },
+  "7ydl3pk7yqeb3n8s6z8r25": {
+    "author": "tylermcginnis",
+    "id": "7ydl3pk7yqeb3n8s6z8r25",
+    "likes": ['tylermcginnis', 'dan_abramov'],
+    "replies": ["tdmrhhh95mh601syanq4h"],
+    "text": "Have you ever had a dream that you, you had, your, you- you could, you’ll do, you- you wants, you, you could do so, you- you’ll do, you could- you, you want, you want them to do you so much you could do anything?",
+    "timestamp": 1533006951452,
+    "replyingTo": null
+  },
   "8xf0y6ziyjabvozdd253nd": {
     id: "8xf0y6ziyjabvozdd253nd",
     text: "Shoutout to all the speakers I know for whom English is not a first language, but can STILL explain a concept well. It's hard enough to give a good talk in your mother tongue!",
