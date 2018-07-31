@@ -11,7 +11,7 @@ class ViewTweet extends Component {
     return (
       <div className="container">
         <Tweet id={id} />
-        <ComposeTweet />
+        <ComposeTweet replyId={id} />
         <h3>Replies</h3>
         <ul>
           {replies.map((tweet) => (

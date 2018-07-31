@@ -19,14 +19,14 @@ class ComposeTweet extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const { author, match } = this.props
-    const replyingTo = match ? match.params.id : null
+    const { author, replyId } = this.props
 
     this.props.dispatch(handleAddTweet({
       text: this.state.text,
       author,
-      replyingTo,
+      replyingTo: replyId,
     }))
+    this.setState(() => ({ text: '' }))
   }
 
   isDisabled = () => {
