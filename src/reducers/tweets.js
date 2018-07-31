@@ -8,11 +8,21 @@ export default function tweets(state = {}, action) {
         ...action.tweets
       }
     case ADD_TWEET: {
-      const { id } = action.tweet
-      return {
-        ...state,
-        [id]: action.tweet,
-      }
+      const { id, replyingTo } = action.tweet
+
+      return replyingTo
+        ? {
+            ...state,
+            [id]: action.tweet,
+            [replyingTo]: {
+              ...state[replyingTo],
+              replies: state[replyingTo].replies.concat([id])
+            }
+          }
+       :  {
+            ...state,
+            [id]: action.tweet,
+          }
     }
     case TOGGLE_LIKE: {
       try {
