@@ -21,12 +21,12 @@ class ComposeTweet extends Component {
 
     const { author, replyId } = this.props
 
+    replyId ? null : this.props.history.push('/')
     this.props.dispatch(handleAddTweet({
       text: this.state.text,
       author,
       replyingTo: replyId,
     }))
-    this.setState(() => ({ text: '' }))
   }
 
   isDisabled = () => {
