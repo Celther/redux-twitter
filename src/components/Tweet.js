@@ -12,7 +12,7 @@ import redHeart from '../media/red-heart.png'
 class Tweet extends Component {
   formatTimestamp = (timestamp) => {
     const tweetDate = new Date(timestamp)
-    const formattedDate = `${tweetDate.getDate()}/${tweetDate.getMonth()}/${tweetDate.getFullYear()}`
+    const formattedDate = `${tweetDate.getDate()}/${tweetDate.getMonth() + 1}/${tweetDate.getFullYear()}`
     const minutes = ('0' + tweetDate.getMinutes()).slice(-2)
     const hours = tweetDate.getHours()
     const formattedTime = hours > 12
