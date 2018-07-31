@@ -6,13 +6,14 @@ import ComposeTweet from './ComposeTweet'
 
 class ViewTweet extends Component {
   render() {
-    const { tweets, id, replies = [] } = this.props
+    const { tweets, id, replies } = this.props
+    const hasReplies = replies[0]
 
     return (
       <div className="container">
         <Tweet id={id} />
         <ComposeTweet replyId={id} />
-        <h3>Replies</h3>
+        {hasReplies ? <h3>Replies</h3> : null}
         <ul>
           {replies.map((tweet) => (
             <li key={tweets[tweet].id}>
