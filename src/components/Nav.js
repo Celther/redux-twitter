@@ -9,7 +9,7 @@ export default function Nav(props) {
       <ul>
         <li>
           <NavLink exact to="/" activeClassName="active">
-            Home
+            Timeline
           </NavLink>
         </li>
         <div>
