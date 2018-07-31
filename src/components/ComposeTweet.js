@@ -21,7 +21,9 @@ class ComposeTweet extends Component {
 
     const { author, replyId } = this.props
 
-    replyId ? null : this.props.history.push('/')
+    if (!replyId) {
+      this.props.history.push('/')
+    }
     this.props.dispatch(handleAddTweet({
       text: this.state.text,
       author,
