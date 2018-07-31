@@ -12,9 +12,12 @@ class ViewTweet extends Component {
       <div className="container">
         <Tweet id={id} />
         <ComposeTweet />
+        <h3>Replies</h3>
         <ul>
           {replies.map((tweet) => (
-            <Tweet id={tweets[tweet].id} key={tweets[tweet].id} />
+            <li key={tweets[tweet].id}>
+              <Tweet id={tweets[tweet].id} />
+            </li>
           ))}
         </ul>
       </div>

@@ -12,7 +12,9 @@ class Timeline extends Component {
         <h2>Timeline</h2>
         <ul>
           {tweetIds.map((id) => (
-            <Tweet id={id} key={id}/>
+            <li key={id}>
+              <Tweet id={id} />
+            </li>
           ))}
         </ul>
       </div>
