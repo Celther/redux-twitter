@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: lighten(antiquewhite, 5%);
 }
 
 .app-container {
@@ -68,6 +69,7 @@ textarea {
   margin: 10px;
   border: 1px solid #dad7d7;
   border-radius: 5px;
+  background-color: white;
 }
 
 .avatar {
