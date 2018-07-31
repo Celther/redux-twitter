@@ -10,6 +10,7 @@ body {
 .app-container {
   max-width: 1000px;
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 ul {
@@ -149,7 +150,6 @@ textarea {
   display: flex;
   justify-content: center;
   background-color: #232B2B;
-  margin-bottom: 30px;
   ul {
     display: flex;
     justify-content: space-around;
@@ -185,4 +185,10 @@ textarea {
     flex-direction: column;
     padding-left: 15px;
   }
+}
+
+.loading {
+  position: absolute;
+  background-color: lightblue;
+  height: 6px;
 }

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
+import LoadingBar from 'react-redux-loading-bar'
 
 import Nav from './Nav'
 import Timeline from './Timeline'
@@ -18,6 +19,7 @@ class App extends Component {
       <Router>
         <Fragment>
           <Nav />
+          <LoadingBar className="loading"/>
           <div className="app-container">
             {
               this.props.loading ? null : (
