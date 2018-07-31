@@ -101,3 +101,34 @@ textarea {
 
 .liked {
   background-color: red; }
+
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #232B2B; }
+  .nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    min-width: 300px;
+    margin: 5px; }
+  .nav img {
+    height: 50px; }
+  .nav a, .nav span {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: aliceblue; }
+  .nav a.active {
+    font-weight: 200;
+    color: lightblue; }
+  .nav a:hover {
+    font-weight: 300;
+    color: antiquewhite; }
+  .nav div {
+    display: flex; }
+  .nav .nav-title {
+    flex-direction: column;
+    padding-left: 10px; }
