@@ -8,7 +8,7 @@ export default function Nav(props) {
     <div className="nav">
       <ul>
         <li>
-          <NavLink exact to="/" activeClass="active">
+          <NavLink exact to="/" activeClassName="active">
             Home
           </NavLink>
         </li>
@@ -21,7 +21,7 @@ export default function Nav(props) {
           </div>
         </div>
         <li>
-          <NavLink to="/new" activeClass="active">
+          <NavLink to="/new" activeClassName="active">
             New Tweet
           </NavLink>
         </li>
