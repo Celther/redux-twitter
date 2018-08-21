@@ -27,12 +27,14 @@ Then open up the **DevTools** and navigate to the **Redux** tab to view all of t
 
 
 **Dev ENV**
+
 2. Boot up the webpack-dev-server
 
 `npm start`
 
 
 **Production**
+
 2. Bundle the project into a build folder:
 
 `npm run build`
