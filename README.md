@@ -17,22 +17,28 @@ Install the Redux DevTools Extension
 
 Then open up the **DevTools** and navigate to the **Redux** tab to view all of the Redux state changes based on your actions.
 
-## or to run the app locally
+## Or to run the app locally
 0. Clone/DL the repository
 
 *From the root directory*
 1. Install the dependencies
+
 `npm install`
 
 
-**(Dev ENV)**
+**Dev ENV**
 2. Boot up the webpack-dev-server
+
 `npm start`
 
 
-**(Production)**
+**Production**
 2. Bundle the project into a build folder:
+
 `npm run build`
+
 3. Start the server:
+
 `node server.js`
+
 4. View the site at the [localhost](localhost:3000)
