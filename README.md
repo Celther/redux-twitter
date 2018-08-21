@@ -2,7 +2,7 @@ Redux Twitter-like app
 ========
 
 ## Overview
-A simple Twitter-like app Using the curriculum from TylerMcGinnis' [Redux course](https://tylermcginnis.com/courses/redux/) as a baseline.
+A simple Twitter-like front-end app Using the curriculum from TylerMcGinnis' [Redux course](https://tylermcginnis.com/courses/redux/) as a baseline.
 
 Built with React/Redux, it can showcase some of the strengths of an interconnected App that uses Redux to manage/share its state.
 
