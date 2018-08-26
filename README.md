@@ -2,14 +2,17 @@ Redux Twitter-like app
 ========
 
 ## Overview
-A simple Twitter-like front-end app Using the curriculum from TylerMcGinnis' [Redux course](https://tylermcginnis.com/courses/redux/) as a baseline.
+A simple Twitter-like front-end app showcasing some of the strengths of an interconnected App that uses Redux, such as how easily shared state is changed and subsequently updated across the app.
 
-Built with React/Redux, it can showcase some of the strengths of an interconnected App that uses Redux to manage/share its state.
+
+This uses the curriculum from TylerMcGinnis' [Redux course](https://tylermcginnis.com/courses/redux/) as a foundation, as it provided the mock API/DB and a rough design.
+
 
 ## Viewing the final Product
 The end result can be seen at: [Not Quite Twitter](https://not-quite-twitter.herokuapp.com/)
 
-  **For Bonus Points**
+## Redux DevTools
+**For Bonus Points**
 Install the Redux DevTools Extension
 >[Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
 
