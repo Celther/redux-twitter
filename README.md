@@ -23,7 +23,7 @@ Then open up the **DevTools** and navigate to the **Redux** tab to view all of t
 ## Or to run the app locally
 0. Clone/DL the repository
 
-*From the root directory*
+**From the root directory**
 1. Install the dependencies
 
 `npm install`
